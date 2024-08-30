@@ -5,6 +5,7 @@
 #include <string>
 #include "QS_Vector.hh"
 #include <cstdlib>
+#include <cstdint>
 #include <cmath>
 #include <algorithm>
 #include "qs_assert.hh"
