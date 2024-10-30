@@ -197,15 +197,15 @@ OPTFLAGS = -O2 -g
 ## Version below for debugging
 ##OPTFLAGS = -DUSE_NVTX -g -G -lineinfo -O0
 
-CUDA_FLAGS = -I${CUDA_PATH}/include/
+#CUDA_FLAGS = -I${CUDA_PATH}/include/
 #CUDA_LDFLAGS = -L${CUDA_PATH}/lib64/ -lcuda -lcudart
 #
-CXX=$(CUDA_PATH)/bin/nvcc
-CXXFLAGS = -DHAVE_CUDA -std=c++11 $(OPTFLAGS) -Xptxas -v 
-CXXFLAGS += -gencode=arch=compute_60,code=\"sm_60,compute_60\" 
-CXXFLAGS += --compiler-bindir=$(HOST_COMPILER)
-CPPFLAGS = -x cu -dc -DHAVE_MPI -DHAVE_ASYNC_MPI $(CALIPER_FLAGS)
-LDFLAGS  = $(CUDA_LDFLAGS) $(CALIPER_LDFLAGS)
+#CXX=$(CUDA_PATH)/bin/nvcc
+#CXXFLAGS = -DHAVE_CUDA -std=c++11 $(OPTFLAGS) -Xptxas -v 
+#CXXFLAGS += -gencode=arch=compute_60,code=\"sm_60,compute_60\" 
+#CXXFLAGS += --compiler-bindir=$(HOST_COMPILER)
+#CPPFLAGS = -x cu -dc -DHAVE_MPI -DHAVE_ASYNC_MPI $(CALIPER_FLAGS)
+#LDFLAGS  = $(CUDA_LDFLAGS) $(CALIPER_LDFLAGS)
 ##LDFLAGS += ${CUDA_PATH}/lib64/libnvToolsExt.so
 
 ###############################################################################
