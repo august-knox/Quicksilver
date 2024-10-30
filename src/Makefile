@@ -163,21 +163,21 @@ LDFLAGS = -fgpu-rdc --hip-link --offload-arch=gfx90a
 ###############################################################################
 ### GCC -- with MPI and OpenMP and Caliper support
 ###############################################################################
-#CALIPER_DIR = $(spack location --install-dir caliper)
-# CALIPER_DIR = ${HOME}/local/caliper/toss3-release
+CALIPER_DIR = $(spack location --install-dir caliper)
+CALIPER_DIR = ${HOME}/local/caliper/toss3-release
 
-# CALIPER_FLAGS = -I${CALIPER_DIR}/include -DUSE_CALIPER
-# CALIPER_LDFLAGS = -Wl,-rpath ${CALIPER_DIR}/lib64 -L${CALIPER_DIR}/lib64 -lcaliper-mpi -lcaliper
+ CALIPER_FLAGS = -I${CALIPER_DIR}/include -DUSE_CALIPER
+ CALIPER_LDFLAGS = -Wl,-rpath ${CALIPER_DIR}/lib64 -L${CALIPER_DIR}/lib64 -lcaliper-mpi -lcaliper
 
-# OPENMP_FLAGS = -DHAVE_OPENMP -fopenmp
-# OPENMP_LDFLAGS = -fopenmp
-# MPI_FLAGS = -DHAVE_MPI
-# OPTFLAGS = -g -O2
+ OPENMP_FLAGS = -DHAVE_OPENMP -fopenmp
+ OPENMP_LDFLAGS = -fopenmp
+ MPI_FLAGS = -DHAVE_MPI
+ OPTFLAGS = -g -O2
 
-# CXX=mpicxx
-# CXXFLAGS = -std=c++11 $(OPTFLAGS) -Wpedantic
-# CPPFLAGS = $(MPI_FLAGS) $(OPENMP_FLAGS) $(CALIPER_FLAGS)
-# LDFLAGS = $(OPENMP_LDFLAGS) $(CALIPER_LDFLAGS)
+ CXX=mpicxx
+ CXXFLAGS = -std=c++11 $(OPTFLAGS) -Wpedantic
+ CPPFLAGS = $(MPI_FLAGS) $(OPENMP_FLAGS) $(CALIPER_FLAGS)
+ LDFLAGS = $(OPENMP_LDFLAGS) $(CALIPER_LDFLAGS)
 
 ###############################################################################
 # Cuda on LLNL Lassen w/ Caliper
@@ -185,15 +185,15 @@ LDFLAGS = -fgpu-rdc --hip-link --offload-arch=gfx90a
 ## Choose one Cuda path
 # CUDA_PATH = /usr/local/cuda
 
-CALIPER_DIR=${HOME}/local/caliper/lassen-cuda10
-CUDA_PATH = /usr/tce/packages/cuda/cuda-10.1.168
+#CALIPER_DIR=${HOME}/local/caliper/lassen-cuda10
+#CUDA_PATH = /usr/tce/packages/cuda/cuda-10.1.168
 
-HOST_COMPILER = mpicxx
+#HOST_COMPILER = mpicxx
 
-CALIPER_FLAGS = -I${CALIPER_DIR}/include -DUSE_CALIPER
-CALIPER_LDFLAGS = -L${CALIPER_DIR}/lib64 -lcaliper
+#CALIPER_FLAGS = -I${CALIPER_DIR}/include -DUSE_CALIPER
+#CALIPER_LDFLAGS = -L${CALIPER_DIR}/lib64 -lcaliper
 
-OPTFLAGS = -O2 -g
+#OPTFLAGS = -O2 -g
 ## Version below for debugging
 ##OPTFLAGS = -DUSE_NVTX -g -G -lineinfo -O0
 
