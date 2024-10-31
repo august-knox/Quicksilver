@@ -115,11 +115,11 @@ SHELL = /bin/bash
 #LDFLAGS = -L$(ROCM_ROOT)/lib -lamdhip64
 
 #AMD with HIP
-ROCM_ROOT = /opt/rocm-5.6.0
-CXX = /usr/tce/packages/cray-mpich/cray-mpich-8.1.26-rocmcc-5.6.0-cce-16.0.0a-magic/bin/mpicxx
-CXXFLAGS = -g 
-CPPFLAGS = -DHAVE_MPI -DHAVE_HIP -x hip --offload-arch=gfx90a -fgpu-rdc -Wno-unused-result
-LDFLAGS = -fgpu-rdc --hip-link --offload-arch=gfx90a
+#ROCM_ROOT = /opt/rocm-5.6.0
+#CXX = /usr/tce/packages/cray-mpich/cray-mpich-8.1.26-rocmcc-5.6.0-cce-16.0.0a-magic/bin/mpicxx
+#CXXFLAGS = -g 
+#CPPFLAGS = -DHAVE_MPI -DHAVE_HIP -x hip --offload-arch=gfx90a -fgpu-rdc -Wno-unused-result
+#LDFLAGS = -fgpu-rdc --hip-link --offload-arch=gfx90a
 
 
 
@@ -163,21 +163,21 @@ LDFLAGS = -fgpu-rdc --hip-link --offload-arch=gfx90a
 ###############################################################################
 ### GCC -- with MPI and OpenMP and Caliper support
 ###############################################################################
-CALIPER_DIR = $(spack location --install-dir caliper)
-CALIPER_DIR = ${HOME}/local/caliper/toss3-release
+#CALIPER_DIR = $(spack location --install-dir caliper)
+#CALIPER_DIR = ${HOME}/local/caliper/toss3-release
 
- CALIPER_FLAGS = -I${CALIPER_DIR}/include -DUSE_CALIPER
- CALIPER_LDFLAGS = -Wl,-rpath ${CALIPER_DIR}/lib64 -L${CALIPER_DIR}/lib64 -lcaliper-mpi -lcaliper
+CALIPER_FLAGS = -I${CALIPER_DIR}/include -DUSE_CALIPER
+CALIPER_LDFLAGS = -Wl,-rpath ${CALIPER_DIR}/lib64 -L${CALIPER_DIR}/lib64 -lcaliper-mpi -lcaliper
 
- OPENMP_FLAGS = -DHAVE_OPENMP -fopenmp
- OPENMP_LDFLAGS = -fopenmp
- MPI_FLAGS = -DHAVE_MPI
- OPTFLAGS = -g -O2
+OPENMP_FLAGS = -DHAVE_OPENMP -fopenmp
+OPENMP_LDFLAGS = -fopenmp
+MPI_FLAGS = -DHAVE_MPI
+OPTFLAGS = -g -O2
 
- CXX=mpicxx
- CXXFLAGS = -std=c++11 $(OPTFLAGS) -Wpedantic
- CPPFLAGS = $(MPI_FLAGS) $(OPENMP_FLAGS) $(CALIPER_FLAGS)
- LDFLAGS = $(OPENMP_LDFLAGS) $(CALIPER_LDFLAGS)
+CXX=mpicxx
+CXXFLAGS = -std=c++11 $(OPTFLAGS) -Wpedantic
+CPPFLAGS = $(MPI_FLAGS) $(OPENMP_FLAGS) $(CALIPER_FLAGS)
+LDFLAGS = $(OPENMP_LDFLAGS) $(CALIPER_LDFLAGS)
 
 ###############################################################################
 # Cuda on LLNL Lassen w/ Caliper
