@@ -169,7 +169,7 @@ CALIPER_DIR = $(spack location --install-dir caliper)
 CALIPER_FLAGS = -I${CALIPER_DIR}/include -DUSE_CALIPER
 
 #CALIPER_LDFLAGS = -Wl,-rpath ${CALIPER_DIR}/lib64 -L${CALIPER_DIR}/lib64 -lcaliper #-lcaliper-mpi
-CALIPER_LDFLAGS =  -L${CALIPER_DIR}/lib64 -lcaliper -lcaliper-mpi
+CALIPER_LDFLAGS =  -L${CALIPER_DIR}/lib64 -lcaliper 
 OPENMP_FLAGS = -DHAVE_OPENMP -fopenmp
 OPENMP_LDFLAGS = -fopenmp
 MPI_FLAGS = -DHAVE_MPI
