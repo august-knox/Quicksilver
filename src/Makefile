@@ -163,12 +163,13 @@ SHELL = /bin/bash
 ###############################################################################
 ### GCC -- with MPI and OpenMP and Caliper support
 ###############################################################################
-#CALIPER_DIR = $(spack location --install-dir caliper)
+CALIPER_DIR = $(spack location --install-dir caliper)
 #CALIPER_DIR = ${HOME}/local/caliper/toss3-release
 #CALIPER_DIR = /
 CALIPER_FLAGS = -I${CALIPER_DIR}/include -DUSE_CALIPER
-CALIPER_LDFLAGS = -Wl,-rpath ${CALIPER_DIR}/lib64 -L${CALIPER_DIR}/lib64 -lcaliper-mpi -lcaliper
 
+#CALIPER_LDFLAGS = -Wl,-rpath ${CALIPER_DIR}/lib64 -L${CALIPER_DIR}/lib64 -lcaliper #-lcaliper-mpi
+CALIPER_LDFLAGS =  -L${CALIPER_DIR}/lib64 -lcaliper
 OPENMP_FLAGS = -DHAVE_OPENMP -fopenmp
 OPENMP_LDFLAGS = -fopenmp
 MPI_FLAGS = -DHAVE_MPI
