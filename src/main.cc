@@ -29,6 +29,7 @@
 #ifdef USE_CALIPER
 #include <caliper/cali.h>
 #include <caliper/cali-manager.h>
+#include <adiak/adiak.hpp>
 #ifdef HAVE_MPI
 #include <caliper/cali-mpi.h>
 #endif
@@ -53,6 +54,8 @@ int main(int argc, char** argv)
    printParameters(params, cout);
 
 #ifdef USE_CALIPER
+   adiak::init(nullptr);
+   adiak::cmdline();
    setupCaliper();
 
    cali::ConfigManager calimgr(params.simulationParams.caliperConfig.c_str());
@@ -112,6 +115,8 @@ int main(int argc, char** argv)
 
 #ifdef USE_CALIPER
    calimgr.flush();
+   adiak::fini();
+
 #endif
 
    mpiFinalize();
