@@ -165,7 +165,7 @@ SHELL = /bin/bash
 ###############################################################################
 #CALIPER_DIR = $(spack location --install-dir caliper)
 #CALIPER_DIR = ${HOME}/local/caliper/toss3-release
-
+#CALIPER_DIR = /
 CALIPER_FLAGS = -I${CALIPER_DIR}/include -DUSE_CALIPER
 CALIPER_LDFLAGS = -Wl,-rpath ${CALIPER_DIR}/lib64 -L${CALIPER_DIR}/lib64 -lcaliper-mpi -lcaliper
 
@@ -175,7 +175,7 @@ MPI_FLAGS = -DHAVE_MPI
 OPTFLAGS = -g -O2
 
 CXX=mpicxx
-CXXFLAGS = -std=c++11 $(OPTFLAGS) -Wpedantic
+CXXFLAGS = -std=c++11 $(OPTFLAGS) #-Wpedantic
 CPPFLAGS = $(MPI_FLAGS) $(OPENMP_FLAGS) $(CALIPER_FLAGS)
 LDFLAGS = $(OPENMP_LDFLAGS) $(CALIPER_LDFLAGS)
 
