@@ -55,7 +55,9 @@ int main(int argc, char** argv)
 
 #ifdef USE_CALIPER
    adiak::init(nullptr);
-   adiak::cmdline();
+   adiak::date();
+   adiak:::adiak_collect_all()
+   adiak::executable();
    setupCaliper();
 
    cali::ConfigManager calimgr(params.simulationParams.caliperConfig.c_str());
