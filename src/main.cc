@@ -54,13 +54,6 @@ int main(int argc, char** argv)
    printParameters(params, cout);
 
 #ifdef USE_CALIPER
-   adiak::init(nullptr);
-   adiak::date();
-   adiak::adiak_collect_all();
-   adiak::adiak_jobsize();
-   adiak::executable();
-   adiak::cmdline();
-   setupCaliper();
 
    cali::ConfigManager calimgr(params.simulationParams.caliperConfig.c_str());
 
@@ -68,6 +61,14 @@ int main(int argc, char** argv)
       std::cerr << "caliper config error: " << calimgr.error_msg() << std::endl;
 
    calimgr.start();
+
+   adiak::init(nullptr);
+   adiak::date();
+   adiak::adiak_collect_all();
+   adiak::adiak_jobsize();
+   adiak::executable();
+   adiak::cmdline();
+   setupCaliper();
 #endif
 
    // mcco stores just about everything.
