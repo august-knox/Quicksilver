@@ -56,7 +56,8 @@ int main(int argc, char** argv)
 #ifdef USE_CALIPER
    adiak::init(nullptr);
    adiak::date();
-   adiak:::adiak_collect_all()
+   adiak::adiak_collect_all();
+   adiak::adiak_jobsize();
    adiak::executable();
    setupCaliper();
 
@@ -116,8 +117,8 @@ int main(int argc, char** argv)
 #endif
 
 #ifdef USE_CALIPER
-   calimgr.flush();
    adiak::fini();
+   calimgr.flush();
 
 #endif
 
