@@ -59,6 +59,7 @@ int main(int argc, char** argv)
    adiak::adiak_collect_all();
    adiak::adiak_jobsize();
    adiak::executable();
+   adiak::cmdline();
    setupCaliper();
 
    cali::ConfigManager calimgr(params.simulationParams.caliperConfig.c_str());
