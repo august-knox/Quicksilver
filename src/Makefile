@@ -167,8 +167,9 @@ CALIPER_DIR = $(spack location --install-dir caliper)
 #CALIPER_DIR = ${HOME}/local/caliper/toss3-release
 #CALIPER_DIR = /
 CALIPER_FLAGS = -I${CALIPER_DIR}/include -DUSE_CALIPER
-
+ADIAK_FLAGS = -I${ADIAK_DIR}/include
 #CALIPER_LDFLAGS = -Wl,-rpath ${CALIPER_DIR}/lib64 -L${CALIPER_DIR}/lib64 -lcaliper #-lcaliper-mpi
+ADIAK_LDFLAGS =  -L${ADIAK_DIR}/lib64 -ladiak
 CALIPER_LDFLAGS =  -L${CALIPER_DIR}/lib64 -lcaliper 
 OPENMP_FLAGS = -DHAVE_OPENMP -fopenmp
 OPENMP_LDFLAGS = -fopenmp
@@ -177,8 +178,8 @@ OPTFLAGS = -g -O2
 
 CXX=mpicxx
 CXXFLAGS = -std=c++11 $(OPTFLAGS) #-Wpedantic
-CPPFLAGS = $(MPI_FLAGS) $(OPENMP_FLAGS) $(CALIPER_FLAGS)
-LDFLAGS = $(OPENMP_LDFLAGS) $(CALIPER_LDFLAGS)
+CPPFLAGS = $(MPI_FLAGS) $(OPENMP_FLAGS) $(CALIPER_FLAGS) $(ADIAK_FLAGS)
+LDFLAGS = $(OPENMP_LDFLAGS) $(CALIPER_LDFLAGS) $(ADIAK_LDFLAGS)
 
 ###############################################################################
 # Cuda on LLNL Lassen w/ Caliper
