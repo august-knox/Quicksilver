@@ -64,8 +64,8 @@ int main(int argc, char** argv)
 
    adiak::init(nullptr);
    adiak::date();
-   adiak::adiak_collect_all();
-   adiak::adiak_jobsize();
+   adiak::collect_all();
+   adiak::jobsize();
    adiak::executable();
    adiak::cmdline();
    setupCaliper();
