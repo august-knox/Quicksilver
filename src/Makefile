@@ -164,12 +164,13 @@ SHELL = /bin/bash
 ### GCC -- with MPI and OpenMP and Caliper support
 ###############################################################################
 CALIPER_DIR = $(spack location --install-dir caliper)
+ADIAK_DIR = $(spack location --install-dir adiak)
 #CALIPER_DIR = ${HOME}/local/caliper/toss3-release
 #CALIPER_DIR = /
 CALIPER_FLAGS = -I${CALIPER_DIR}/include -DUSE_CALIPER
 ADIAK_FLAGS = -I${ADIAK_DIR}/include -DUSE_ADIAK
 #CALIPER_LDFLAGS = -Wl,-rpath ${CALIPER_DIR}/lib64 -L${CALIPER_DIR}/lib64 -lcaliper #-lcaliper-mpi
-ADIAK_LDFLAGS =  -L${ADIAK_DIR}/lib64 -ladiak
+ADIAK_LDFLAGS =  -L${ADIAK_DIR}/lib -ladiak
 CALIPER_LDFLAGS =  -L${CALIPER_DIR}/lib64 -lcaliper 
 OPENMP_FLAGS = -DHAVE_OPENMP -fopenmp
 OPENMP_LDFLAGS = -fopenmp
