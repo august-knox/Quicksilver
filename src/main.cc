@@ -63,7 +63,7 @@ int main(int argc, char** argv)
    calimgr.start();
 
    adiak::init(nullptr);
-   adiak::date();
+   //adiak::date();
    adiak::collect_all();
    adiak::jobsize();
    adiak::executable();
