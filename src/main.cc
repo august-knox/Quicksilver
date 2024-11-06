@@ -68,6 +68,7 @@ int main(int argc, char** argv)
    adiak::jobsize();
    //adiak::executable();
    adiak::cmdline();
+   adiak::hostname();
    setupCaliper();
 #endif
 
