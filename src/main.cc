@@ -61,7 +61,7 @@ int main(int argc, char** argv)
       std::cerr << "caliper config error: " << calimgr.error_msg() << std::endl;
 
    calimgr.start();
-
+   setupCaliper();
    adiak::init(nullptr);
    //adiak::date();
    //adiak::collect_all();
@@ -69,7 +69,6 @@ int main(int argc, char** argv)
    //adiak::executable();
    adiak::cmdline();
    adiak::hostname();
-   setupCaliper();
 #endif
 
    // mcco stores just about everything.
