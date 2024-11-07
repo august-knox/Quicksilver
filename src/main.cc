@@ -69,18 +69,18 @@ int main(int argc, char** argv)
    //adiak::executable();
    adiak::cmdline();
    adiak::hostname();
-   adiak::value("x-size of simulation", adiak_general, NULL, "%d", params.simulationParams.lx);
-   adiak::value("y-size of simulation", adiak_general, NULL, "%d", params.simulationParams.ly);
-   adiak::value("z-size of simulation", adiak_general, NULL, "%d", params.simulationParams.lz);
-   adiak::value("number of particles", adiak_general, NULL, "%d", params.simulationParams.nParticles);
-   adiak::value("number of mesh elements in x", adiak_general, NULL, "%d", params.simulationParams.nx);
-   adiak::value("number of mesh elements in y", adiak_general, NULL, "%d", params.simulationParams.ny);
-   adiak::value("number of mesh elements in z", adiak_general, NULL, "%d", params.simulationParams.nz);
+   adiak::value("x-size of simulation", params.simulationParams.lx);
+   adiak::value("y-size of simulation", params.simulationParams.ly);
+   adiak::value("z-size of simulation", params.simulationParams.lz);
+   adiak::value("number of particles", params.simulationParams.nParticles);
+   adiak::value("number of mesh elements in x", params.simulationParams.nx);
+   adiak::value("number of mesh elements in y", params.simulationParams.ny);
+   adiak::value("number of mesh elements in z", params.simulationParams.nz);
 
-   adiak::value("number of MPI ranks in x", adiak_general, NULL, "%d", params.simulationParams.xDom);
-   adiak::value("number of MPI ranks in y", adiak_general, NULL, "%d", params.simulationParams.yDom);
+   adiak::value("number of MPI ranks in x", params.simulationParams.xDom);
+   adiak::value("number of MPI ranks in y", params.simulationParams.yDom);
    //adiak::adiak_namevalue("number of MPI ranks in y", adiak_general, NULL, "%d", params.simulationParams.yDom);
-   adiak::value("number of MPI ranks in z", adiak_general, NULL, "%d", params.simulationParams.zDom);
+   adiak::value("number of MPI ranks in z", params.simulationParams.zDom);
 #endif
 
    // mcco stores just about everything.
