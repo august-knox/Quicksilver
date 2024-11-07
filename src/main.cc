@@ -69,17 +69,18 @@ int main(int argc, char** argv)
    //adiak::executable();
    adiak::cmdline();
    adiak::hostname();
-   adiak::adiak_namevalue("x-size of simulation", adiak_general, NULL, "%d", params.simulationParams.lx);
-   adiak::adiak_namevalue("y-size of simulation", adiak_general, NULL, "%d", params.simulationParams.ly);
-   adiak::adiak_namevalue("z-size of simulation", adiak_general, NULL, "%d", params.simulationParams.lz);
-   adiak::adiak_namevalue("number of particles", adiak_general, NULL, "%d", params.simulationParams.nParticles);
-   adiak::adiak_namevalue("number of mesh elements in x", adiak_general, NULL, "%d", params.simulationParams.nx);
-   adiak::adiak_namevalue("number of mesh elements in y", adiak_general, NULL, "%d", params.simulationParams.ny);
-   adiak::adiak_namevalue("number of mesh elements in z", adiak_general, NULL, "%d", params.simulationParams.nz);
+   adiak::value("x-size of simulation", adiak_general, NULL, "%d", params.simulationParams.lx);
+   adiak::value("y-size of simulation", adiak_general, NULL, "%d", params.simulationParams.ly);
+   adiak::value("z-size of simulation", adiak_general, NULL, "%d", params.simulationParams.lz);
+   adiak::value("number of particles", adiak_general, NULL, "%d", params.simulationParams.nParticles);
+   adiak::value("number of mesh elements in x", adiak_general, NULL, "%d", params.simulationParams.nx);
+   adiak::value("number of mesh elements in y", adiak_general, NULL, "%d", params.simulationParams.ny);
+   adiak::value("number of mesh elements in z", adiak_general, NULL, "%d", params.simulationParams.nz);
 
-   adiak::adiak_namevalue("number of MPI ranks in x", adiak_general, NULL, "%d", params.simulationParams.xDom);
-   adiak::adiak_namevalue("number of MPI ranks in y", adiak_general, NULL, "%d", params.simulationParams.yDom);
-   adiak::adiak_namevalue("number of MPI ranks in z", adiak_general, NULL, "%d", params.simulationParams.zDom);
+   adiak::value("number of MPI ranks in x", adiak_general, NULL, "%d", params.simulationParams.xDom);
+   adiak::value("number of MPI ranks in y", adiak_general, NULL, "%d", params.simulationParams.yDom);
+   //adiak::adiak_namevalue("number of MPI ranks in y", adiak_general, NULL, "%d", params.simulationParams.yDom);
+   adiak::value("number of MPI ranks in z", adiak_general, NULL, "%d", params.simulationParams.zDom);
 #endif
 
    // mcco stores just about everything.
