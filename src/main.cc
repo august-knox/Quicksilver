@@ -69,6 +69,17 @@ int main(int argc, char** argv)
    //adiak::executable();
    adiak::cmdline();
    adiak::hostname();
+   adiak_namevalue("x-size of simulation", adiak_general, NULL, "%d", params.lx);
+   adiak_namevalue("y-size of simulation", adiak_general, NULL, "%d", params.ly);
+   adiak_namevalue("z-size of simulation", adiak_general, NULL, "%d", params.lz);
+   adiak_namevalue("number of particles", adiak_general, NULL, "%d", params.nParticles);
+   adiak_namevalue("number of mesh elements in x", adiak_general, NULL, "%d", params.nx);
+   adiak_namevalue("number of mesh elements in y", adiak_general, NULL, "%d", params.ny);
+   adiak_namevalue("number of mesh elements in z", adiak_general, NULL, "%d", params.nz);
+
+   adiak_namevalue("number of MPI ranks in x", adiak_general, NULL, "%d", params.xDom);
+   adiak_namevalue("number of MPI ranks in y", adiak_general, NULL, "%d", params.yDom);
+   adiak_namevalue("number of MPI ranks in z", adiak_general, NULL, "%d", params.zDom);
 #endif
 
    // mcco stores just about everything.
