@@ -4,6 +4,7 @@
 #include "MC_Processor_Info.hh"
 #include "Globals.hh"
 #include "portability.hh"
+#include <adiak.hpp>
 
 const char *mc_fast_timer_names[MC_Fast_Timer::Num_Timers] =
 {
@@ -102,6 +103,7 @@ void MC_Fast_Timer_Container::Cumulative_Report(int mpi_rank, int num_ranks, MPI
                         (numSegments / (max_clock[cycleTracking_Index]*1e-6)),
                         "[Num Segments / Cycle Tracking Time]" );
     }
+    adiak::value("FOM", numSegments / (max_clock[cycleTracking_Index]*1e-6));
 }
 
 void MC_Fast_Timer_Container::Last_Cycle_Report(int report_time, int mpi_rank, int num_ranks, MPI_Comm comm_world)
