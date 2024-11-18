@@ -64,11 +64,11 @@ int main(int argc, char** argv)
    setupCaliper();
    adiak::init(nullptr);
    //adiak::date();
-   //adiak::collect_all();
-   adiak::jobsize();
+   adiak::collect_all();
+   // adiak::jobsize();
    //adiak::executable();
-   adiak::cmdline();
-   adiak::hostname();
+   //adiak::cmdline();
+   //adiak::hostname();
    adiak::value("x-size of simulation", params.simulationParams.lx);
    adiak::value("y-size of simulation", params.simulationParams.ly);
    adiak::value("z-size of simulation", params.simulationParams.lz);
