@@ -91,7 +91,7 @@ int main(int argc, char** argv)
    MC_FASTTIMER_START(MC_Fast_Timer::main);     // this can be done once mcco exist.
 
    const int nSteps = params.simulationParams.nSteps;
-
+   adiak::value("number of steps", params.simulationParams.nSteps);
 #ifdef USE_CALIPER
    CALI_CXX_MARK_LOOP_BEGIN(mainloop, "qs.mainloop");
 #endif
