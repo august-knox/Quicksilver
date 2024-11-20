@@ -8,6 +8,7 @@
 #include <vector>
 #include <map>
 #include <iostream>
+#include <stdint.h>
 
 struct GeometryParameters
 {
