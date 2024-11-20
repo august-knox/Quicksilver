@@ -6,6 +6,7 @@
 #include "MC_Processor_Info.hh"
 #include "Parameters.hh"
 #include <string>
+#include <stdint.h>
 
 using std::string;
 
