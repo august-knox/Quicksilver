@@ -22,6 +22,7 @@
 #include "CycleTracking.hh"
 #include "CoralBenchmark.hh"
 #include "EnergySpectrum.hh"
+#include <stdint.h>
 
 #include "git_hash.hh"
 #include "git_vers.hh"
